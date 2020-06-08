@@ -1,0 +1,67 @@
+﻿@model System.Data.DataTable
+@{
+    ViewBag.Title = "Search";
+}
+<!Doctype html>
+<html>
+<head>
+    <title>
+        Currency
+    </title>
+    <link rel="stylesheet" type="text/css" href="~/Content/mystyle.css">
+</head>
+<body>
+    <div id="header">
+        <b>Currency Converter</b><br>
+        <button class="button" id="button"><a href="/Home/Index">Home</a></button>
+        <button class="button" id="button"><a href="/Home/Search">Records</a></button>
+    </div>
+    <div id="main">
+        @using (Html.BeginForm("Search", "Home", FormMethod.Post))
+        {
+            <label for="start">From:</label><br />
+            <input type="date" id="start" name="start" value="01/01/2020" min="01/01/2020" max="31/12/2100" /><br />
+            <label for="end">To:</label><br />
+            <input type="date" id="end" name="end" value="31/12/2100" min="01/01/2020" max="31/12/2100" /><br />
+            <input id="submit" type="submit" Value="Submit"><br><br>
+        }
+        @{
+            if (Model.Rows.Count >= 0)
+            {
+                <table border=" 1" style="background-color:#dee0e3;">
+                    <thead>
+                        <tr>
+                            <td>
+                                Amount
+                            </td>
+                            <td>
+                                Conversion
+                            </td>
+                            <td>
+                                Time
+                            </td>
+                        </tr>
+                    </thead>
+                    @foreach (System.Data.DataRow dr in Model.Rows)
+                    {
+                        <tr>
+                            <td>
+                                @dr["Amount"].ToString()
+                            </td>
+                            <td>
+                                @dr["Conversion"]
+                            </td>
+                            <td>
+                                @dr["Time"]
+                            </td>
+                        </tr>
+                    }
+                </table>
+
+            }
+        }
+        @ViewBag.Date
+    </div>
+</body>
+</html>
+

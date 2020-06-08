@@ -1,0 +1,81 @@
+body{
+	background-color:#1f1e1d;
+}
+#header{
+	margin-bottom:2.5%;
+	padding:1.25%;
+	background-color:#3a403c;
+	font-size:2em;
+	color:#dee0e3;
+}
+
+#title{
+	margin-left:12.5%;
+	font-size:1.2em;
+	color:#dee0e3;
+}
+
+#header button {
+	margin-top:2.5%;
+	background-color: #F4F4F4;
+	color: #3a403c;
+	padding: 0.75%;
+	font-size: 0.6eM;
+	text-align: center;
+	transition: all 0.4s ease 0s;
+	border:none;
+	text-decoration: none;
+}
+
+#header button:hover {
+	color: #3a403c;
+	background: #4076b8;
+	transition: all 0.4s ease 0s;
+}
+
+#main{
+	width:70%;
+	margin-left:15%;
+	background-color:#3a403c;
+	padding-top:2.5%;
+	padding-bottom:2.5%;
+	margin-right:15%;
+}
+
+input[type = number]{
+	margin-left:12.5%;
+	width:75%;
+	font-size:1.2em;
+	background-color:#dee0e3;
+}
+
+#submit{
+	margin-left:40%;
+	width:20%;
+	font-size:1.2em;
+}
+
+#date{
+	color:#dee0e3;
+}
+
+table {
+	margin-left:12.5%;
+	width: 75%;
+}
+
+label {
+	color:#dee0e3;
+}
+
+#result {
+	margin-left: 12.5%;
+	font-size: 1.2em;
+	color:#dee0e3;
+}
+
+input[type = submit]:hover{
+	background-color:#4076b8;
+	color:#dee0e3;
+}
+

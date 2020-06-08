@@ -1,0 +1,80 @@
+﻿@model CurrencyWebApp.Models.HomeModel
+@{
+    ViewBag.Title = "Index";
+}
+<!Doctype html>
+<html>
+<head>
+    <title>
+        Currency
+    </title>
+    <link rel="stylesheet" type="text/css" href="~/Content/mystyle.css">
+</head>
+<body>
+    <div id="header">
+        <b>Currency Converter</b><br>
+        <button class ="button" id="button"><a href="/Home/Index">Home</a></button>
+        <button class ="button" id="button"><a href="/Home/Search">Records</a></button>
+    </div>
+    <div id="main">
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+        {
+            <p id="title">Input Value:</p>
+            <input type="number" step="0.01" name="input" value="1.0"></input><br><br />
+            <table>
+                <tr>
+                    <td>
+                        @Html.RadioButtonFor(m => m.currency, "GBP to AUD", new {@checked = "true"})<label>GBP to AUD</label>
+                    </td>
+                    <td>
+                        @Html.RadioButtonFor(m => m.currency, "GBP to EUR")<label>GBP to EUR</label>
+                    </td>
+                    <td>
+                        @Html.RadioButtonFor(m => m.currency, "GBP to USD")<label>GBP to USD</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.RadioButtonFor(m => m.currency, "AUD to EUR")<label>AUD to EUR</label>
+                    </td>
+                    <td>
+                        @Html.RadioButtonFor(m => m.currency, "AUD to GBP")<label>AUD to GBP</label>
+                    </td>
+                    <td>
+                        @Html.RadioButtonFor(m => m.currency, "AUD to USD")<label>AUD to USD</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.RadioButtonFor(m => m.currency, "EUR to AUD")<label>EUR to AUD</label>
+                    </td>
+                    <td>
+                        @Html.RadioButtonFor(m => m.currency, "EUR to GBP")<label>EUR to GBP</label>
+                    </td>
+                    <td>
+                        @Html.RadioButtonFor(m => m.currency, "EUR to USD")<label>EUR to USD</label>
+                    </td>
+                    <td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.RadioButtonFor(m => m.currency, "USD to AUD")<label>USD to AUD</label>
+                    </td>
+                    <td>
+                        @Html.RadioButtonFor(m => m.currency, "USD to EUR")<label>USD to EUR</label>
+                    </td>
+                    <td>
+                        @Html.RadioButtonFor(m => m.currency, "USD to GBP")<label>USD to GBP</label>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <input id="submit" type="submit" Value="Submit"><br><br>
+        }
+        <p id="result">The new value is @ViewBag.Input <p /> <br />
+        
+ 
+    </div>
+</body>
+</html>
+
